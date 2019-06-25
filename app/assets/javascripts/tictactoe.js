@@ -30,3 +30,7 @@ function checkWinner(){
   })
   return winner;
 }
+
+function doTurn() {
+  
+}
