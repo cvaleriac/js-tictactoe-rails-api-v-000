@@ -41,3 +41,7 @@ function doTurn(square) {
     setMessage("Tie game.")
   }
 }
+
+function attachListeners(){
+  
+}
