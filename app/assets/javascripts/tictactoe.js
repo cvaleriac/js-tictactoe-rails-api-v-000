@@ -1,4 +1,8 @@
 // Code your JavaScript / jQuery solution here
+$(document).ready(function() {
+  attachListeners();
+});
+
 const WINNING_COMBOS = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
 var turn = 0;
 function player() {
@@ -42,10 +46,19 @@ function doTurn(square) {
   }
 }
 
-$(document).ready(function() {
-  attachListeners();
-});
-
-function attachListeners(){
-
+function attachListeners() {
+  $("td").on("click", function() {
+    if (!checkWinner() && this.innerHTML === "") {
+      doTurn(this);
+    }
+  });
+  $("#previous").on("click", function() {
+    loadGames();
+  });
+  $("#save").on("click", function() {
+    saveGame();
+  });
+  $("#clear").on("click", function() {
+    clearGame();
+  });
 }
