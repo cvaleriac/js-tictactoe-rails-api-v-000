@@ -12,3 +12,7 @@ function updateState(square) {
   var currentPlayer = player();
 $(square).text(currentPlayer);
 }
+
+function setMessage(message) {
+  $('#message').text(message);
+}
