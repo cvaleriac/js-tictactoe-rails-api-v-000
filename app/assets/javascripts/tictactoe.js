@@ -42,6 +42,10 @@ function doTurn(square) {
   }
 }
 
+$(document).ready(function() {
+  attachListeners();
+});
+
 function attachListeners(){
 
 }
