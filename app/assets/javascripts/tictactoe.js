@@ -24,7 +24,7 @@ function checkWinner(){
   $('td').text((index, square) => board[index] = square);
   WINNING_COMBOS.forEach(position => {
     if (board[position[0]] === board[position[1]] && board[position[1]] === board[position[2]] && board[position[0]] !== "") {
-      setMessage(`Player ${player()} Won!`)
+      setMessage(`Player ${board[position[0]]} Won!`)
       return winner = true;
     }
   })
