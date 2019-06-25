@@ -9,5 +9,6 @@ function player() {
 }
 
 function updateState(square) {
-square.innerHTML(player());
+  var currentPlayer = player();
+$(square).text(currentPlayer);
 }
