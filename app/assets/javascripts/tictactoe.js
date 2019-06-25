@@ -7,3 +7,7 @@ function player() {
     return 'O';
   }
 }
+
+function updateState() {
+  
+}
