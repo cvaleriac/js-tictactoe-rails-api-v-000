@@ -43,5 +43,5 @@ function doTurn(square) {
 }
 
 function attachListeners(){
-  
+
 }
