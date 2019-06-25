@@ -39,7 +39,7 @@ function updateState(td) {
   $("#message").text(string);
 }
 
- 
+
 function checkWinner() {
   const winning_combos = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
   board = {};
@@ -54,7 +54,7 @@ function checkWinner() {
 }
 
  function doTurn(square){
-  updateState(square); 
+  updateState(square);
   turn++;
   if (checkWinner() || checkTiedGame()) {
     saveGame();
@@ -115,11 +115,11 @@ function checkWinner() {
  function reloadGame(gameId) {
   $.getJSON(`/games/${gameId}`, function(game) {
     const state = game.data.attributes.state
-    
+
     $.map($('td'), function(square, i) {
       square.innerHTML = state[i];
     });
-  
+
     currentGame = gameId
     turn = state.filter((s) => s !== "").length
   });
