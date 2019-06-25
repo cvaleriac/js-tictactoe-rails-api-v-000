@@ -8,6 +8,6 @@ function player() {
   }
 }
 
-function updateState() {
-
+function updateState(square) {
+$(`[data-x=${x}][data-y=${y}]`).html(player());
 }
