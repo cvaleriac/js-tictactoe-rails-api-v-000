@@ -9,5 +9,5 @@ function player() {
 }
 
 function updateState(square) {
-$(`[data-x=${x}][data-y=${y}]`).html(player());
+square.innerHTML(player());
 }
