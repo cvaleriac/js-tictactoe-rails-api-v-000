@@ -2,12 +2,12 @@
 var turn = 0
 var currentGame = 0
 
- // Add event listeners when (document).ready
+
 $(document).ready(function() {
   attachListeners();
 });
 
- // Attach listeners
+
 function attachListeners() {
   $("td").on("click", function() {
     if (!checkWinner() && this.innerHTML === "") {
@@ -25,12 +25,12 @@ function attachListeners() {
   });
 }
 
- // Return token of current player
+
 function player() {
   return (turn % 2 === 0) ? "X" : "O"
 }
 
- // Add token to clicked td element
+
 function updateState(td) {
     $(td).text(player());
 }
@@ -39,7 +39,7 @@ function updateState(td) {
   $("#message").text(string);
 }
 
- // Check if game as been won (ie winning_combo exists)
+ 
 function checkWinner() {
   const winning_combos = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
   board = {};
@@ -54,7 +54,7 @@ function checkWinner() {
 }
 
  function doTurn(square){
-  updateState(square); //pass in element that was clicked
+  updateState(square); 
   turn++;
   if (checkWinner() || checkTiedGame()) {
     saveGame();
@@ -115,11 +115,11 @@ function checkWinner() {
  function reloadGame(gameId) {
   $.getJSON(`/games/${gameId}`, function(game) {
     const state = game.data.attributes.state
-    // Populate board with saved state
+    
     $.map($('td'), function(square, i) {
       square.innerHTML = state[i];
     });
-    // Set currentGame and turn
+  
     currentGame = gameId
     turn = state.filter((s) => s !== "").length
   });
